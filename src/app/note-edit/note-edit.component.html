@@ -1,0 +1,29 @@
+<div class="container">
+  <form
+    (ngSubmit)="saveNote(noteTitleInput.value, noteContentTextarea.value)"
+    class="child"
+  >
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>タイトル</mat-label>
+      <input matInput name="title" #noteTitleInput id="noteTitleInput" />
+    </mat-form-field>
+    <textarea
+      name="note"
+      class="variable-textarea"
+      #noteContentTextarea
+      id="noteContentTextarea"
+      [(ngModel)]="markdown"
+    ></textarea>
+
+    <button
+      color="primary"
+      class="save-btn"
+      mat-raised-button
+      aria-label="保存"
+    >
+      <mat-icon>send</mat-icon>
+      保存
+    </button>
+  </form>
+  <markdown class="variable-binding child" [data]="markdown"></markdown>
+</div>
