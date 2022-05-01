@@ -1,4 +1,10 @@
-<p>note-list works!</p>
+<mat-list>
+  <ng-container *ngFor="let note of noteManager.getNotes()">
+    <mat-list-item>
+      {{ note.title }}
+    </mat-list-item>
+  </ng-container>
+</mat-list>
 
 <button class="add-button" routerLink="/add" mat-fab color="primary">
   <mat-icon>add</mat-icon>

@@ -8,6 +8,7 @@ export class NoteManagerService {
   private notes: Note[];
   constructor() {
     this.notes = [];
+    this.loadNotes();
   }
 
   saveNotes() {
@@ -28,5 +29,9 @@ export class NoteManagerService {
       content: content,
     });
     this.saveNotes();
+  }
+
+  getNotes() {
+    return this.notes;
   }
 }
