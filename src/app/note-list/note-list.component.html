@@ -2,6 +2,15 @@
   <ng-container *ngFor="let note of noteManager.getNotes()">
     <mat-list-item>
       {{ note.title }}
+      <div>
+        <button
+          mat-raised-button
+          routerLink="/edit/{{ note.title }}"
+          class="edit-button"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
     </mat-list-item>
   </ng-container>
 </mat-list>

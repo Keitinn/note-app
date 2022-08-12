@@ -34,4 +34,24 @@ export class NoteManagerService {
   getNotes() {
     return this.notes;
   }
+
+  // 同じタイトルのノートがあるかどうかを返す
+  findSameTitle(title: string) {
+    let retVal = this.notes.find((note) => note.title == title);
+    return retVal ? true : false;
+  }
+
+  // 同じタイトルのノートを更新する
+  updateNoteContent(title: string, content: string) {
+    let note = this.notes.find((note) => (note.title = title));
+    if (note) {
+      note.content = content;
+    }
+    this.saveNotes();
+  }
+
+  getContent(title: string) {
+    let retVal = this.notes.find((note) => note.title == title)?.content;
+    return retVal;
+  }
 }

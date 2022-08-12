@@ -9,10 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/material.module';
 import { NoteListComponent } from './note-list/note-list.component';
 import { NoteEditComponent } from './note-edit/note-edit.component';
-import {
-  AngularMarkdownEditorComponent,
-  AngularMarkdownEditorModule,
-} from 'angular-markdown-editor';
+import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({

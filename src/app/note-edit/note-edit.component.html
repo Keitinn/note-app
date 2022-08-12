@@ -1,3 +1,4 @@
+<p *ngIf="editNoteName != undefined">{{ editNoteName }}を編集中</p>
 <div class="container">
   <form
     (ngSubmit)="saveNote(noteTitleInput.value, noteContentTextarea.value)"
@@ -5,7 +6,13 @@
   >
     <mat-form-field appearance="outline" floatLabel="always">
       <mat-label>タイトル</mat-label>
-      <input matInput name="title" #noteTitleInput id="noteTitleInput" />
+      <input
+        matInput
+        name="title"
+        #noteTitleInput
+        id="noteTitleInput"
+        [ngModel]="editNoteName"
+      />
     </mat-form-field>
     <textarea
       name="note"
